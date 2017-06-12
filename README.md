@@ -7,7 +7,7 @@ http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
 ## Installation
 
-- Download the hurststrap folder from GitHub or from hurststrap.com
+- Download the startertheme folder from GitHub or from https://github.com/ChrisHursty/startertheme
 - Upload it into your WordPress installation subfolder here: `/wp-content/themes/`
 - Login to your WordPress backend
 - Go to Appearance → Themes
