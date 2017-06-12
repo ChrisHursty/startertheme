@@ -1,7 +1,7 @@
 ## About
 
 Underscores, Bootstrap, and Sass.
-# StarterTheme WordPress Theme Framework
+# StarterTheme WordPress Theme
 
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
@@ -32,7 +32,7 @@ Or, to run with Browser-Sync:
 - First change the browser-sync options to reflect your environment in the file `/gulpfile.js` in the beginning of the file:
 ```javascript
 var browserSyncOptions = {
-    proxy: "localhost/startertheme/", // <----- CHANGE HERE
+    proxy: "localhost/", // Ex. "startertheme.dev/"
     notify: false
 };
 ```

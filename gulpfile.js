@@ -18,30 +18,31 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost/wordpress/",
+    proxy: "chris-hurst.dev/",
     notify: false
 };
 
 
 // Defining requirements
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
-var watch = require('gulp-watch');
-var cssnano = require('gulp-cssnano');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var merge2 = require('merge2');
-var imagemin = require('gulp-imagemin');
-var ignore = require('gulp-ignore');
-var rimraf = require('gulp-rimraf');
-var clone = require('gulp-clone');
-var merge = require('gulp-merge');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
-var del = require('del');
-var cleanCSS = require('gulp-clean-css');
+var gulp         = require('gulp');
+var plumber      = require('gulp-plumber');
+var autoprefixer = require('autoprefixer');
+var sass         = require('gulp-sass');
+var watch        = require('gulp-watch');
+var cssnano      = require('gulp-cssnano');
+var rename       = require('gulp-rename');
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
+var merge2       = require('merge2');
+var imagemin     = require('gulp-imagemin');
+var ignore       = require('gulp-ignore');
+var rimraf       = require('gulp-rimraf');
+var clone        = require('gulp-clone');
+var merge        = require('gulp-merge');
+var sourcemaps   = require('gulp-sourcemaps');
+var browserSync  = require('browser-sync').create();
+var del          = require('del');
+var cleanCSS     = require('gulp-clean-css');
 var gulpSequence = require('gulp-sequence');
 
 
@@ -56,6 +57,9 @@ gulp.task('scss-for-prod', function() {
                 this.emit('end');
             }
         }))
+        .pipe(autoprefixer([
+            autoprefixer('last 2 versions', '> 1%')
+        ]))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass());
 
